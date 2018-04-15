@@ -11,9 +11,3 @@ class User(db.Model):
 	created_on = db.Column('created_on', db.DateTime, default=db.func.now())
 	last_modified = db.Column('last_modified', db.DateTime, default=db.func.now(), onupdate=db.func.now())
 
-	def __init__(self, first_name: str, last_name: str, email:str, password: str):
-		# TODO think about constraints
-		self.first_name = first_name
-		self.last_name = last_name
-		self.email = email
-		self.password = password

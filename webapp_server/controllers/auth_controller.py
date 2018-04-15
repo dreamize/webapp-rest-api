@@ -18,9 +18,7 @@ def sign_up_user(user):  # noqa: E501
     """
     user_obj = User.from_dict(user)  # noqa: E501
     result = create_user(user_obj)
-    if result > 0:
-        user_obj.id = result
-        user_obj.password = ''
-        return user_obj
-    else:
-        return 500
+    user_obj.id = result
+    user_obj.password = ''
+    return user_obj
+
